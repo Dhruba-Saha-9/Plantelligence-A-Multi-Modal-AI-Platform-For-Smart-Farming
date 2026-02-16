@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Suggestions - Plantelligence</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page">
+    <div class="page-inner">
+      <header class="site-header">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">??</div>
+          <div class="brand-text">
+            <span class="brand-name">Plantelligence</span>
+            <span class="brand-tagline">Your AI Farming Assistant</span>
+          </div>
+        </a>
+        <div class="header-right">
+          <nav class="top-nav">
+            <a href="index.html">Dashboard</a>
+            <a href="crop-suggestions.html">Crops</a>
+            <a href="weather-update.html">Weather</a>
+          </nav>
+          <button class="language-switch" type="button">
+            <span class="flag">??</span>
+            <span>English</span>
+            <span>?</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> · Crop Suggestions
+        </div>
+
+        <section class="subpage-hero">
+          <div class="subpage-hero-main">
+            <h1 class="subpage-title">Crop Suggestions</h1>
+            <p class="subpage-subtitle">
+              Enter field, soil, and climate details to generate a polished, data-rich crop
+              recommendation summary. Outputs on this page are static placeholders designed to
+              mirror a real decision-support workflow.
+            </p>
+          </div>
+          <div>
+            <div class="pill">Detailed input &amp; output mock</div>
+          </div>
+        </section>
+
+        <section class="page-layout">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Field + soil profile</h2>
+                <p class="card-subtitle">
+                  Add location, soil chemistry, and climate context to generate ranked crop options.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-section-title">Location and season</div>
+            <div class="form-grid form-grid-3">
+              <div class="form-field">
+                <label for="location">Location</label>
+                <input id="location" type="text" placeholder="e.g. Nashik, Maharashtra" />
+              </div>
+              <div class="form-field">
+                <label for="district">District / Block</label>
+                <input id="district" type="text" placeholder="e.g. Niphad block" />
+              </div>
+              <div class="form-field">
+                <label for="pincode">Pincode</label>
+                <input id="pincode" type="text" placeholder="e.g. 422003" />
+              </div>
+              <div class="form-field">
+                <label for="season">Season window</label>
+                <select id="season">
+                  <option>Kharif</option>
+                  <option>Rabi</option>
+                  <option>Zaid</option>
+                  <option>Perennial</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="planting-window">Planting window</label>
+                <input id="planting-window" type="text" placeholder="e.g. 15 Jun - 10 Jul" />
+              </div>
+              <div class="form-field">
+                <label for="farm-size">Farm size</label>
+                <input id="farm-size" type="text" placeholder="e.g. 3.5 acres" />
+              </div>
+            </div>
+
+            <div class="form-section-title">Soil parameters</div>
+            <div class="form-grid form-grid-3">
+              <div class="form-field">
+                <label for="soil-type">Soil type</label>
+                <select id="soil-type">
+                  <option>Loamy</option>
+                  <option>Black cotton soil</option>
+                  <option>Red soil</option>
+                  <option>Sandy</option>
+                  <option>Laterite</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="soil-ph">Soil pH</label>
+                <input id="soil-ph" type="text" placeholder="e.g. 6.8" />
+              </div>
+              <div class="form-field">
+                <label for="soil-ec">Electrical conductivity (dS/m)</label>
+                <input id="soil-ec" type="text" placeholder="e.g. 0.5" />
+              </div>
+              <div class="form-field">
+                <label for="organic-carbon">Organic carbon (%)</label>
+                <input id="organic-carbon" type="text" placeholder="e.g. 0.62" />
+              </div>
+              <div class="form-field">
+                <label for="nitrogen">Available N (kg/ha)</label>
+                <input id="nitrogen" type="text" placeholder="e.g. 210" />
+              </div>
+              <div class="form-field">
+                <label for="phosphorus">Available P (kg/ha)</label>
+                <input id="phosphorus" type="text" placeholder="e.g. 18" />
+              </div>
+              <div class="form-field">
+                <label for="potassium">Available K (kg/ha)</label>
+                <input id="potassium" type="text" placeholder="e.g. 320" />
+              </div>
+              <div class="form-field">
+                <label for="moisture">Soil moisture (%)</label>
+                <input id="moisture" type="text" placeholder="e.g. 22" />
+              </div>
+              <div class="form-field">
+                <label for="soil-depth">Effective soil depth</label>
+                <input id="soil-depth" type="text" placeholder="e.g. 45 cm" />
+              </div>
+            </div>
+
+            <div class="form-section-title">Climate and water access</div>
+            <div class="form-grid form-grid-3">
+              <div class="form-field">
+                <label for="temp-range">Temperature range</label>
+                <input id="temp-range" type="text" placeholder="e.g. 22-34C" />
+              </div>
+              <div class="form-field">
+                <label for="rainfall">Expected rainfall (mm)</label>
+                <input id="rainfall" type="text" placeholder="e.g. 620" />
+              </div>
+              <div class="form-field">
+                <label for="humidity">Avg. humidity (%)</label>
+                <input id="humidity" type="text" placeholder="e.g. 68" />
+              </div>
+              <div class="form-field">
+                <label for="irrigation">Irrigation access</label>
+                <select id="irrigation">
+                  <option>Canal + borewell</option>
+                  <option>Borewell only</option>
+                  <option>Canal only</option>
+                  <option>Rainfed</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="water-source">Water source reliability</label>
+                <select id="water-source">
+                  <option>Assured</option>
+                  <option>Moderate</option>
+                  <option>Uncertain</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="sunlight">Sunlight hours/day</label>
+                <input id="sunlight" type="text" placeholder="e.g. 7.5" />
+              </div>
+            </div>
+
+            <div class="form-section-title">Farm strategy</div>
+            <div class="form-grid form-grid-3">
+              <div class="form-field">
+                <label for="previous-crop">Previous crop</label>
+                <input id="previous-crop" type="text" placeholder="e.g. Onion" />
+              </div>
+              <div class="form-field">
+                <label for="market-focus">Market focus</label>
+                <select id="market-focus">
+                  <option>Local mandi</option>
+                  <option>Contract buyer</option>
+                  <option>Export oriented</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="risk">Risk appetite</label>
+                <select id="risk">
+                  <option>Balanced</option>
+                  <option>Conservative</option>
+                  <option>Aggressive</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="notes">Notes (optional)</label>
+                <textarea id="notes" placeholder="Preferred crops, constraints, machinery, labor."></textarea>
+              </div>
+            </div>
+
+            <div class="btn-row">
+              <a href="#analyze" class="analysis-anchor">
+                <span class="btn-primary">Generate recommendation</span>
+              </a>
+              <span class="card-subtitle">
+                Scrolls to a simulated analysis with a polished output report.
+              </span>
+            </div>
+          </div>
+
+          <div class="card" id="analyze">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Recommendation report (sample)</h2>
+                <p class="card-subtitle">Snapshot output based on the inputs shown on the left.</p>
+              </div>
+            </div>
+
+            <div class="analysis-section">
+              <div class="analysis-placeholder">
+                A short animated spinner precedes the detailed recommendations below.
+              </div>
+              <div class="analysis-loading">
+                <div class="loader-dot"></div>
+                <div>
+                  <strong>Evaluating climate and soil...</strong>
+                  <div>Scoring suitability, water risk, and market fit.</div>
+                </div>
+              </div>
+              <div class="analysis-results">
+                <div class="output-metrics">
+                  <div class="metric-card">
+                    <div class="metric-title">Suitability score</div>
+                    <div class="metric-value">82 / 100</div>
+                    <div class="metric-note">Strong match for Kharif window.</div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-title">Water risk</div>
+                    <div class="metric-value">Medium</div>
+                    <div class="metric-note">Rainfall variability in July.</div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-title">Market outlook</div>
+                    <div class="metric-value">Stable</div>
+                    <div class="metric-note">Good mandi demand nearby.</div>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="result-card">
+                  <div class="result-card-title">Input summary (sample)</div>
+                  <div class="input-chip-row">
+                    <span class="input-chip">Location: Nashik, MH</span>
+                    <span class="input-chip">Season: Kharif</span>
+                    <span class="input-chip">Soil: Loamy, pH 6.8</span>
+                    <span class="input-chip">Rainfall: 620 mm</span>
+                    <span class="input-chip">Irrigation: Canal + borewell</span>
+                    <span class="input-chip">Farm size: 3.5 acres</span>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="result-card">
+                  <div class="result-card-title">Top ranked crops</div>
+                  <div class="table-wrapper rank-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Crop</th>
+                          <th>Suitability</th>
+                          <th>Water need</th>
+                          <th>Yield range</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Soybean</td>
+                          <td><span class="rank-pill good">High</span></td>
+                          <td>Low to Moderate</td>
+                          <td>2.0-2.6 t/ha</td>
+                        </tr>
+                        <tr>
+                          <td>Maize (Hybrid)</td>
+                          <td><span class="rank-pill good">High</span></td>
+                          <td>Moderate</td>
+                          <td>5.0-6.8 t/ha</td>
+                        </tr>
+                        <tr>
+                          <td>Tur (Pigeon pea)</td>
+                          <td><span class="rank-pill mid">Medium</span></td>
+                          <td>Low</td>
+                          <td>1.2-1.8 t/ha</td>
+                        </tr>
+                        <tr>
+                          <td>Onion (Kharif)</td>
+                          <td><span class="rank-pill mid">Medium</span></td>
+                          <td>High</td>
+                          <td>22-28 t/ha</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="analysis-results-grid">
+                  <div class="result-card">
+                    <div class="result-card-title">Best-fit recommendation</div>
+                    <p>
+                      <strong>Primary:</strong> Soybean with short-duration variety to align with
+                      rainfall window and reduce water risk.
+                    </p>
+                    <p><strong>Why:</strong> Suits loamy soil, good pH, and moderate rainfall.</p>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Nutrition plan (sample)</div>
+                    <p>
+                      <strong>Basal:</strong> 20 kg N, 40 kg P, 20 kg K per ha.
+                    </p>
+                    <p><strong>Top dressing:</strong> 20 kg N at 30 DAS.</p>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Irrigation note</div>
+                    <p>
+                      Maintain soil moisture at 60-70% during flowering. Avoid water stress in
+                      first 20 days after sowing.
+                    </p>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Rotation and backup</div>
+                    <ul class="result-card-list">
+                      <li>Green gram to boost soil nitrogen after harvest.</li>
+                      <li>Fodder sorghum as contingency if rainfall dips.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="risk-note">
+                  This is a static example report. Actual recommendations should use live weather,
+                  soil lab data, and mandi prices.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        Crop Suggestions UI mockup · Plantelligence · Data shown is illustrative.
+      </footer>
+    </div>
+  </body>
+</html>

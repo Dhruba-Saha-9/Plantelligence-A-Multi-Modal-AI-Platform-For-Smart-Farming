@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaf Scanner - Plantelligence</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page">
+    <div class="page-inner">
+      <header class="site-header">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">&#127807;</div>
+          <div class="brand-text">
+            <span class="brand-name">Plantelligence</span>
+            <span class="brand-tagline">Your AI Farming Assistant</span>
+          </div>
+        </a>
+        <div class="header-right">
+          <nav class="top-nav">
+            <a href="index.html">Dashboard</a>
+            <a href="leaf-scanner.html">Leaf Scanner</a>
+            <a href="soil-analysis.html">Soil</a>
+          </nav>
+          <button class="language-switch" type="button">
+            <span class="flag">&#127760;</span>
+            <span>English</span>
+            <span>&#9662;</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> &middot; Leaf Scanner
+        </div>
+
+        <section class="subpage-hero">
+          <div class="subpage-hero-main">
+            <h1 class="subpage-title">Leaf Scanner</h1>
+            <p class="subpage-subtitle">
+              Upload a clear photo of a crop leaf to run your integrated disease model and
+              receive live analysis with confidence scores.
+            </p>
+          </div>
+          <div>
+            <div class="pill">Live model mode</div>
+          </div>
+        </section>
+
+        <section class="page-layout">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Upload leaf image</h2>
+                <p class="card-subtitle">Drag and drop or click to choose a file.</p>
+              </div>
+            </div>
+            <form id="leaf-scanner-form">
+              <label class="upload-box" for="leaf-image-input" id="upload-box">
+                <div class="upload-icon">&#128247;</div>
+                <div><strong>Drop your leaf photo</strong> here</div>
+                <div>Supported: PNG, JPG, JPEG, up to 10 MB.</div>
+                <div class="pill" id="selected-file-label">No file selected</div>
+                <input
+                  id="leaf-image-input"
+                  class="file-input"
+                  type="file"
+                  accept="image/png,image/jpeg,image/jpg"
+                />
+                <img id="leaf-preview" class="upload-preview" alt="Leaf preview" />
+              </label>
+
+              <div class="btn-row">
+                <button type="submit" id="analyze-button" class="btn-primary">Analyze</button>
+                <span class="card-subtitle" id="status-text">
+                  Start the API and upload an image to run analysis.
+                </span>
+              </div>
+            </form>
+          </div>
+
+          <div class="card" id="analyze-panel">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Analysis results</h2>
+                <p class="card-subtitle">Results from your trained model are shown below.</p>
+              </div>
+            </div>
+            <div class="analysis-section">
+              <div class="analysis-placeholder" id="analysis-placeholder">
+                Upload an image and click Analyze to see prediction details.
+              </div>
+              <div class="analysis-loading" id="analysis-loading">
+                <div class="loader-dot"></div>
+                <div>
+                  <strong>Analyzing leaf image...</strong>
+                  <div>Running disease detection and confidence scoring.</div>
+                </div>
+              </div>
+              <div class="analysis-results" id="analysis-results">
+                <div class="analysis-results-grid">
+                  <div class="result-card">
+                    <div class="result-card-title">
+                      Detected disease
+                      <span class="result-card-badge">Live output</span>
+                    </div>
+                    <p id="detected-disease">-</p>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Confidence</div>
+                    <p id="confidence-score">-</p>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Top predictions</div>
+                    <ul class="result-card-list" id="top-predictions-list">
+                      <li>-</li>
+                    </ul>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Action suggestions</div>
+                    <ul class="result-card-list" id="recommendations-list">
+                      <li>-</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">Leaf Scanner &middot; Plantelligence</footer>
+    </div>
+    <script src="leaf-scanner.js"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soil Analysis – Plantelligence</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page">
+    <div class="page-inner">
+      <header class="site-header">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">🌿</div>
+          <div class="brand-text">
+            <span class="brand-name">Plantelligence</span>
+            <span class="brand-tagline">Your AI Farming Assistant</span>
+          </div>
+        </a>
+        <div class="header-right">
+          <nav class="top-nav">
+            <a href="index.html">Dashboard</a>
+            <a href="soil-analysis.html">Soil</a>
+            <a href="crop-suggestions.html">Crops</a>
+          </nav>
+          <button class="language-switch" type="button">
+            <span class="flag">🌐</span>
+            <span>English</span>
+            <span>▾</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> · Soil Analysis
+        </div>
+
+        <section class="subpage-hero">
+          <div class="subpage-hero-main">
+            <h1 class="subpage-title">Soil Analysis</h1>
+            <p class="subpage-subtitle">
+              Capture soil readings like pH, moisture, and nutrient levels to simulate how an
+              AI engine could grade soil health and recommend fertilizers. The interface below
+              is static, for design only.
+            </p>
+          </div>
+          <div>
+            <div class="pill">Static form &amp; result cards</div>
+          </div>
+        </section>
+
+        <section class="page-layout">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Enter soil parameters</h2>
+                <p class="card-subtitle">
+                  These inputs are visual placeholders and are not processed.
+                </p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="soil-type">Soil type</label>
+                <select id="soil-type">
+                  <option>Loamy</option>
+                  <option>Clay</option>
+                  <option>Sandy</option>
+                  <option>Silty</option>
+                  <option>Peaty</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="soil-ph">pH</label>
+                <input id="soil-ph" type="text" placeholder="e.g. 6.5" />
+              </div>
+              <div class="form-field">
+                <label for="soil-moisture">Moisture (%)</label>
+                <input id="soil-moisture" type="text" placeholder="e.g. 28" />
+              </div>
+              <div class="form-field">
+                <label for="soil-n">Nitrogen (N)</label>
+                <input id="soil-n" type="text" placeholder="e.g. Medium" />
+              </div>
+              <div class="form-field">
+                <label for="soil-p">Phosphorus (P)</label>
+                <input id="soil-p" type="text" placeholder="e.g. Low" />
+              </div>
+              <div class="form-field">
+                <label for="soil-k">Potassium (K)</label>
+                <input id="soil-k" type="text" placeholder="e.g. High" />
+              </div>
+            </div>
+            <div class="btn-row">
+              <a href="#analyze" class="analysis-anchor">
+                <span class="btn-primary">Analyze Soil</span>
+              </a>
+              <span class="card-subtitle">
+                Button is for navigation only; CSS simulates an analyzing delay.
+              </span>
+            </div>
+          </div>
+
+          <div class="card" id="analyze">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Soil health summary</h2>
+                <p class="card-subtitle">
+                  Example of how Plantelligence could present soil insights.
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-section">
+              <div class="analysis-placeholder">
+                A brief loader appears before these example cards are revealed.
+              </div>
+              <div class="analysis-loading">
+                <div class="loader-dot"></div>
+                <div>
+                  <strong>Analyzing soil profile…</strong>
+                  <div>Estimating soil health score and nutrient balance (mockup).</div>
+                </div>
+              </div>
+              <div class="analysis-results">
+                <div class="analysis-results-grid">
+                  <div class="result-card">
+                    <div class="result-card-title">Soil health score</div>
+                    <p>
+                      Overall rating: <strong>7.8 / 10</strong> – healthy loamy soil with slightly
+                      acidic pH, ideal for a wide range of crops.
+                    </p>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Missing nutrients</div>
+                    <ul class="result-card-list">
+                      <li>Mild phosphorus deficiency detected (low P levels).</li>
+                      <li>Organic matter slightly below recommended benchmark.</li>
+                    </ul>
+                  </div>
+                  <div class="result-card">
+                    <div class="result-card-title">Fertilizer recommendation</div>
+                    <ul class="result-card-list">
+                      <li>Apply a balanced NPK fertilizer (10-26-26) before sowing.</li>
+                      <li>Incorporate well-decomposed farmyard manure to boost organic carbon.</li>
+                      <li>Re-test soil after one crop cycle to fine-tune future doses.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        Soil Analysis UI mockup &middot; Plantelligence &middot; Data is illustrative only.
+      </footer>
+    </div>
+  </body>
+</html>
+
