@@ -1,0 +1,1 @@
+# Plantelligence-A-Multi-Modal-AI-Platform-For-Smart-Farming
