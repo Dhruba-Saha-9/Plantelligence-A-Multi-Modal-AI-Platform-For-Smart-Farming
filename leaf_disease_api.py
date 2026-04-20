@@ -69,7 +69,6 @@ CLASS_NAMES = [
     "Tomato___healthy",
 ]
 
-
 def _friendly_label(value: str) -> str:
     return " ".join(value.replace("_", " ").replace(",", " ").split())
 

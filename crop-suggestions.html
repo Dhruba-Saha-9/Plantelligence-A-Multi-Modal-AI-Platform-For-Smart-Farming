@@ -10,7 +10,7 @@
     <div class="page-inner">
       <header class="site-header">
         <a href="index.html" class="brand">
-          <div class="brand-logo">??</div>
+          <div class="brand-logo">PL</div>
           <div class="brand-text">
             <span class="brand-name">Plantelligence</span>
             <span class="brand-tagline">Your AI Farming Assistant</span>
@@ -23,16 +23,16 @@
             <a href="weather-update.html">Weather</a>
           </nav>
           <button class="language-switch" type="button">
-            <span class="flag">??</span>
+            <span class="flag">EN</span>
             <span>English</span>
-            <span>?</span>
+            <span>v</span>
           </button>
         </div>
       </header>
 
       <main>
         <div class="breadcrumb">
-          <a href="index.html">Home</a> · Crop Suggestions
+          <a href="index.html">Home</a> > Crop Suggestions
         </div>
 
         <section class="subpage-hero">
@@ -40,12 +40,12 @@
             <h1 class="subpage-title">Crop Suggestions</h1>
             <p class="subpage-subtitle">
               Enter field, soil, and climate details to generate a polished, data-rich crop
-              recommendation summary. Outputs on this page are static placeholders designed to
-              mirror a real decision-support workflow.
+              recommendation summary. Outputs on this page are generated from your inputs using
+              a built-in crop suitability engine.
             </p>
           </div>
           <div>
-            <div class="pill">Detailed input &amp; output mock</div>
+            <div class="pill">Live rule-based recommendation</div>
           </div>
         </section>
 
@@ -205,11 +205,11 @@
             </div>
 
             <div class="btn-row">
-              <a href="#analyze" class="analysis-anchor">
-                <span class="btn-primary">Generate recommendation</span>
-              </a>
-              <span class="card-subtitle">
-                Scrolls to a simulated analysis with a polished output report.
+              <button id="generate-crop-btn" type="button" class="btn-primary">
+                Generate recommendation
+              </button>
+              <span id="crop-status" class="card-subtitle">
+                Enter numbers and click Generate recommendation.
               </span>
             </div>
           </div>
@@ -217,52 +217,47 @@
           <div class="card" id="analyze">
             <div class="card-header">
               <div>
-                <h2 class="card-title">Recommendation report (sample)</h2>
-                <p class="card-subtitle">Snapshot output based on the inputs shown on the left.</p>
+                <h2 class="card-title">Recommendation report</h2>
+                <p class="card-subtitle">Live output generated from the inputs shown on the left.</p>
               </div>
             </div>
 
             <div class="analysis-section">
-              <div class="analysis-placeholder">
-                A short animated spinner precedes the detailed recommendations below.
+              <div id="analysis-placeholder" class="analysis-placeholder">
+                Fill your values and click Generate recommendation.
               </div>
-              <div class="analysis-loading">
+              <div id="analysis-loading" class="analysis-loading">
                 <div class="loader-dot"></div>
                 <div>
                   <strong>Evaluating climate and soil...</strong>
                   <div>Scoring suitability, water risk, and market fit.</div>
                 </div>
               </div>
-              <div class="analysis-results">
+              <div id="analysis-results" class="analysis-results">
                 <div class="output-metrics">
                   <div class="metric-card">
                     <div class="metric-title">Suitability score</div>
-                    <div class="metric-value">82 / 100</div>
-                    <div class="metric-note">Strong match for Kharif window.</div>
+                    <div id="metric-suitability" class="metric-value">--</div>
+                    <div id="metric-suitability-note" class="metric-note">Run analysis to view score.</div>
                   </div>
                   <div class="metric-card">
                     <div class="metric-title">Water risk</div>
-                    <div class="metric-value">Medium</div>
-                    <div class="metric-note">Rainfall variability in July.</div>
+                    <div id="metric-water-risk" class="metric-value">--</div>
+                    <div id="metric-water-note" class="metric-note">Calculated from rainfall and irrigation.</div>
                   </div>
                   <div class="metric-card">
                     <div class="metric-title">Market outlook</div>
-                    <div class="metric-value">Stable</div>
-                    <div class="metric-note">Good mandi demand nearby.</div>
+                    <div id="metric-market" class="metric-value">--</div>
+                    <div id="metric-market-note" class="metric-note">Derived from your market strategy.</div>
                   </div>
                 </div>
 
                 <div class="divider"></div>
 
                 <div class="result-card">
-                  <div class="result-card-title">Input summary (sample)</div>
-                  <div class="input-chip-row">
-                    <span class="input-chip">Location: Nashik, MH</span>
-                    <span class="input-chip">Season: Kharif</span>
-                    <span class="input-chip">Soil: Loamy, pH 6.8</span>
-                    <span class="input-chip">Rainfall: 620 mm</span>
-                    <span class="input-chip">Irrigation: Canal + borewell</span>
-                    <span class="input-chip">Farm size: 3.5 acres</span>
+                  <div class="result-card-title">Input summary</div>
+                  <div id="input-chip-row" class="input-chip-row">
+                    <span class="input-chip">No input captured yet.</span>
                   </div>
                 </div>
 
@@ -280,30 +275,9 @@
                           <th>Yield range</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="crop-rank-body">
                         <tr>
-                          <td>Soybean</td>
-                          <td><span class="rank-pill good">High</span></td>
-                          <td>Low to Moderate</td>
-                          <td>2.0-2.6 t/ha</td>
-                        </tr>
-                        <tr>
-                          <td>Maize (Hybrid)</td>
-                          <td><span class="rank-pill good">High</span></td>
-                          <td>Moderate</td>
-                          <td>5.0-6.8 t/ha</td>
-                        </tr>
-                        <tr>
-                          <td>Tur (Pigeon pea)</td>
-                          <td><span class="rank-pill mid">Medium</span></td>
-                          <td>Low</td>
-                          <td>1.2-1.8 t/ha</td>
-                        </tr>
-                        <tr>
-                          <td>Onion (Kharif)</td>
-                          <td><span class="rank-pill mid">Medium</span></td>
-                          <td>High</td>
-                          <td>22-28 t/ha</td>
+                          <td colspan="4">No recommendations yet.</td>
                         </tr>
                       </tbody>
                     </table>
@@ -313,38 +287,28 @@
                 <div class="analysis-results-grid">
                   <div class="result-card">
                     <div class="result-card-title">Best-fit recommendation</div>
-                    <p>
-                      <strong>Primary:</strong> Soybean with short-duration variety to align with
-                      rainfall window and reduce water risk.
-                    </p>
-                    <p><strong>Why:</strong> Suits loamy soil, good pH, and moderate rainfall.</p>
+                    <p id="best-fit-primary"><strong>Primary:</strong> Run analysis to get best-fit crop.</p>
+                    <p id="best-fit-why"><strong>Why:</strong> Soil, climate, and nutrient matching will appear here.</p>
                   </div>
                   <div class="result-card">
-                    <div class="result-card-title">Nutrition plan (sample)</div>
-                    <p>
-                      <strong>Basal:</strong> 20 kg N, 40 kg P, 20 kg K per ha.
-                    </p>
-                    <p><strong>Top dressing:</strong> 20 kg N at 30 DAS.</p>
+                    <div class="result-card-title">Nutrition plan</div>
+                    <p id="nutrition-basal"><strong>Basal:</strong> Awaiting recommendation.</p>
+                    <p id="nutrition-top"><strong>Top dressing:</strong> Awaiting recommendation.</p>
                   </div>
                   <div class="result-card">
                     <div class="result-card-title">Irrigation note</div>
-                    <p>
-                      Maintain soil moisture at 60-70% during flowering. Avoid water stress in
-                      first 20 days after sowing.
-                    </p>
+                    <p id="irrigation-note">Irrigation strategy will appear after analysis.</p>
                   </div>
                   <div class="result-card">
                     <div class="result-card-title">Rotation and backup</div>
-                    <ul class="result-card-list">
-                      <li>Green gram to boost soil nitrogen after harvest.</li>
-                      <li>Fodder sorghum as contingency if rainfall dips.</li>
+                    <ul id="rotation-list" class="result-card-list">
+                      <li>Rotation and contingency tips will appear after analysis.</li>
                     </ul>
                   </div>
                 </div>
 
-                <div class="risk-note">
-                  This is a static example report. Actual recommendations should use live weather,
-                  soil lab data, and mandi prices.
+                <div id="risk-note" class="risk-note">
+                  Recommendation engine is rule-based. Use local agronomy guidance before final decisions.
                 </div>
               </div>
             </div>
@@ -353,8 +317,9 @@
       </main>
 
       <footer class="footer">
-        Crop Suggestions UI mockup · Plantelligence · Data shown is illustrative.
+        Crop Suggestions - Plantelligence - Data shown is illustrative.
       </footer>
     </div>
+    <script src="crop-suggestions.js"></script>
   </body>
 </html>

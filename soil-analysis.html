@@ -40,12 +40,11 @@
             <h1 class="subpage-title">Soil Analysis</h1>
             <p class="subpage-subtitle">
               Capture soil readings like pH, moisture, and nutrient levels to simulate how an
-              AI engine could grade soil health and recommend fertilizers. The interface below
-              is static, for design only.
+              AI engine could grade soil health and recommend fertilizers.
             </p>
           </div>
           <div>
-            <div class="pill">Static form &amp; result cards</div>
+            <div class="pill">Live input-driven analysis</div>
           </div>
         </section>
 
@@ -54,9 +53,7 @@
             <div class="card-header">
               <div>
                 <h2 class="card-title">Enter soil parameters</h2>
-                <p class="card-subtitle">
-                  These inputs are visual placeholders and are not processed.
-                </p>
+                <p id="soil-status" class="card-subtitle">Enter values and click Analyze Soil.</p>
               </div>
             </div>
             <div class="form-grid">
@@ -79,25 +76,21 @@
                 <input id="soil-moisture" type="text" placeholder="e.g. 28" />
               </div>
               <div class="form-field">
-                <label for="soil-n">Nitrogen (N)</label>
-                <input id="soil-n" type="text" placeholder="e.g. Medium" />
+                <label for="soil-n">Available Nitrogen (kg/ha)</label>
+                <input id="soil-n" type="text" placeholder="e.g. 180" />
               </div>
               <div class="form-field">
-                <label for="soil-p">Phosphorus (P)</label>
-                <input id="soil-p" type="text" placeholder="e.g. Low" />
+                <label for="soil-p">Available Phosphorus (kg/ha)</label>
+                <input id="soil-p" type="text" placeholder="e.g. 22" />
               </div>
               <div class="form-field">
-                <label for="soil-k">Potassium (K)</label>
-                <input id="soil-k" type="text" placeholder="e.g. High" />
+                <label for="soil-k">Available Potassium (kg/ha)</label>
+                <input id="soil-k" type="text" placeholder="e.g. 240" />
               </div>
             </div>
             <div class="btn-row">
-              <a href="#analyze" class="analysis-anchor">
-                <span class="btn-primary">Analyze Soil</span>
-              </a>
-              <span class="card-subtitle">
-                Button is for navigation only; CSS simulates an analyzing delay.
-              </span>
+              <button id="analyze-soil-btn" type="button" class="btn-primary">Analyze Soil</button>
+              <span class="card-subtitle">Soil health summary will be generated from your values.</span>
             </div>
           </div>
 
@@ -105,45 +98,37 @@
             <div class="card-header">
               <div>
                 <h2 class="card-title">Soil health summary</h2>
-                <p class="card-subtitle">
-                  Example of how Plantelligence could present soil insights.
-                </p>
+                <p class="card-subtitle">Live output generated from your current inputs.</p>
               </div>
             </div>
 
             <div class="analysis-section">
-              <div class="analysis-placeholder">
-                A brief loader appears before these example cards are revealed.
+              <div id="soil-analysis-placeholder" class="analysis-placeholder">
+                Fill the inputs and click Analyze Soil to generate output.
               </div>
-              <div class="analysis-loading">
+              <div id="soil-analysis-loading" class="analysis-loading">
                 <div class="loader-dot"></div>
                 <div>
                   <strong>Analyzing soil profile…</strong>
-                  <div>Estimating soil health score and nutrient balance (mockup).</div>
+                  <div>Estimating soil health score and nutrient balance.</div>
                 </div>
               </div>
-              <div class="analysis-results">
+              <div id="soil-analysis-results" class="analysis-results">
                 <div class="analysis-results-grid">
                   <div class="result-card">
                     <div class="result-card-title">Soil health score</div>
-                    <p>
-                      Overall rating: <strong>7.8 / 10</strong> – healthy loamy soil with slightly
-                      acidic pH, ideal for a wide range of crops.
-                    </p>
+                    <p id="soil-health-score">Overall rating: <strong>--</strong></p>
                   </div>
                   <div class="result-card">
-                    <div class="result-card-title">Missing nutrients</div>
-                    <ul class="result-card-list">
-                      <li>Mild phosphorus deficiency detected (low P levels).</li>
-                      <li>Organic matter slightly below recommended benchmark.</li>
+                    <div class="result-card-title">Nutrient diagnosis</div>
+                    <ul id="soil-diagnosis-list" class="result-card-list">
+                      <li>Nutrient diagnosis will appear here.</li>
                     </ul>
                   </div>
                   <div class="result-card">
                     <div class="result-card-title">Fertilizer recommendation</div>
-                    <ul class="result-card-list">
-                      <li>Apply a balanced NPK fertilizer (10-26-26) before sowing.</li>
-                      <li>Incorporate well-decomposed farmyard manure to boost organic carbon.</li>
-                      <li>Re-test soil after one crop cycle to fine-tune future doses.</li>
+                    <ul id="soil-fertilizer-list" class="result-card-list">
+                      <li>Recommendations will appear after analysis.</li>
                     </ul>
                   </div>
                 </div>
@@ -154,9 +139,10 @@
       </main>
 
       <footer class="footer">
-        Soil Analysis UI mockup &middot; Plantelligence &middot; Data is illustrative only.
+        Soil Analysis - Plantelligence - Data is illustrative only.
       </footer>
     </div>
+    <script src="soil-analysis.js"></script>
   </body>
 </html>
 
